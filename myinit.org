@@ -20,10 +20,10 @@
 #+END_SRC
 * Org mode
 #+BEGIN_SRC emacs-lisp
-;(use-package org-bullets
-;  :ensure t
-;  :config
-;  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 #+END_SRC
 * Ace windows for easy window switching
@@ -47,7 +47,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (molokai-theme auto-complete counsel ace-window which-key use-package try))))
+    (molokai-theme counsel ace-window which-key use-package try))))
 (custom-set-faces
  '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
 #+END_SRC
@@ -90,13 +90,20 @@
 #+END_SRC
 * Autocomplete
 #+BEGIN_SRC emacs-lisp
-(use-package auto-complete
-  :ensure t
-  :init
-  (progn
-    (ac-config-default)
-    (global-auto-complete-mode t)
-    ))
+;(use-package auto-complete
+;  :ensure t
+;  :init
+;  (progn
+;    (ac-config-default)
+;    (global-auto-complete-mode t)
+;    ))
+#+END_SRC
+* Company
+#+BEGIN_SRC emacs-lisp
+  (use-package company
+    :ensure t
+    :config
+    (add-hook 'after-init-hook 'global-company-mode))
 #+END_SRC
 * Yasnippet
 #+BEGIN_SRC emacs-lisp
@@ -154,5 +161,15 @@
           :publishing-function org-publish-attachment)
 
     ("x" :components ("org-ianbarton" "org-static-ian"))))
+
+#+END_SRC
+* Python
+#+BEGIN_SRC emacs-lisp
+    (use-package elpy
+      :ensure t
+      :config
+      (progn
+	(elpy-enable)
+	(setq elpy-rpc-backend "jedi")))
 
 #+END_SRC
