@@ -173,3 +173,25 @@
 	(setq elpy-rpc-backend "jedi")))
 
 #+END_SRC
+* projectile
+#+BEGIN_SRC emacs-lisp
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode)
+(setq projectile-completion-system 'ivy))
+
+(use-package counsel-projectile
+  :ensure t
+  :config
+  (counsel-projectile-on))
+
+#+END_SRC
+* neotree
+#+BEGIN_SRC emacs-lisp
+  (use-package neotree
+    :ensure t
+    :config
+    (global-set-key [f5] 'neotree-toggle))
+
+#+END_SRC
