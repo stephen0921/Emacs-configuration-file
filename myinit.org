@@ -173,3 +173,61 @@
 	(setq elpy-rpc-backend "jedi")))
 
 #+END_SRC
+* projectile
+#+BEGIN_SRC emacs-lisp
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode)
+(setq projectile-completion-system 'ivy))
+
+(use-package counsel-projectile
+  :ensure t
+  :config
+  (counsel-projectile-on))
+#+END_SRC
+* neotree
+#+BEGIN_SRC emacs-lisp
+  (use-package neotree
+    :ensure t
+    :config
+    (global-set-key [f8] 'neotree-toggle))
+    
+#+END_SRC
+* prodigy
+ #+BEGIN_SRC emacs-lisp
+   (use-package prodigy
+   :ensure t
+   :config
+   (prodigy-define-service
+     :name "nikola"
+     :command "nikola"
+     :args '("auto")
+     :cwd "E:\\git\\stephen0921.github.io"
+     :tags '(blog nikola)
+     :stop-signal 'sigint
+     :kill-process-buffer-on-stop t
+    )
+
+   ;(prodigy-define-service
+   ;  :name "deploy"
+   ;  :command "nikola"
+   ;  :args '("github_deploy")
+   ;  :cwd "E:\\git\\stephen0921.github.io"
+   ;  :tags '(blog nikola)
+   ;  :stop-signal 'sigint
+   ;  :kill-process-buffer-on-stop t
+   ;  )
+   )
+ #+END_SRC
+* magit
+#+BEGIN_SRC emacs-lisp
+
+  (use-package magit
+    :ensure t
+    :config
+    (progn
+      (magit-mode)
+      (global-set-key (kbd "C-x g") 'magit-status)
+      (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)))
+#+END_SRC
