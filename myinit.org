@@ -185,10 +185,6 @@
   :ensure t
   :config
   (counsel-projectile-on))
-<<<<<<< HEAD
-=======
-
->>>>>>> ccfceb9e5689f29f3947b1f1d6c7c3f2682a88c5
 #+END_SRC
 * neotree
 #+BEGIN_SRC emacs-lisp
