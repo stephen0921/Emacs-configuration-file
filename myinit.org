@@ -137,30 +137,30 @@
 * Org Blog
 #+BEGIN_SRC emacs-lisp
 
-(setq org-publish-project-alist
-      '(("org-ianbarton"
-          ;; Path to your org files.
-          :base-directory "/cygdrive/e/ref/blog/myproject/org/"
-          :base-extension "org"
+;(setq org-publish-project-alist
+;      '(("org-ianbarton"
+;          ;; Path to your org files.
+;          :base-directory "/cygdrive/e/ref/blog/myproject/org/"
+;          :base-extension "org"
 
-          ;; Path to your Jekyll project.
-          :publishing-directory "/cygdrive/e/git/stephen0921.github.io/"
-          :recursive t
-          :publishing-function org-html-publish-to-html
-          :headline-levels 4 
-          :html-extension "html"
-          :body-only t ;; Only export section between <body> </body>
-    )
+;          ;; Path to your Jekyll project.
+;          :publishing-directory "/cygdrive/e/git/stephen0921.github.io/"
+;          :recursive t
+;          :publishing-function org-html-publish-to-html
+;          :headline-levels 4 
+;          :html-extension "html"
+;          :body-only t ;; Only export section between <body> </body>
+;    )
 
 
-    ("org-static-ian"
-          :base-directory "/cygdrive/e/ref/blog/myproject/org/"
-          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-          :publishing-directory "/cygdrive/e/git/stephen0921.github.io/"
-          :recursive t
-          :publishing-function org-publish-attachment)
+;    ("org-static-ian"
+;          :base-directory "/cygdrive/e/ref/blog/myproject/org/"
+;          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
+;          :publishing-directory "/cygdrive/e/git/stephen0921.github.io/"
+;          :recursive t
+;          :publishing-function org-publish-attachment)
 
-    ("x" :components ("org-ianbarton" "org-static-ian"))))
+;    ("x" :components ("org-ianbarton" "org-static-ian"))))
 
 #+END_SRC
 * Python
